@@ -5,6 +5,11 @@
 - FastAPI
 - PostgreSQL
 - SQLAlchemy
+- Alembic
+
+## Documentos detalhados
+- Migrations: docs/migrations.md
+- Tabela Address: docs/address.md
 
 ## Estrutura atual
 - app/core: configuracao e conexao com banco
