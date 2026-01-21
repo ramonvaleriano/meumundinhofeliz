@@ -4,9 +4,11 @@ from sqlalchemy.orm import Session
 
 from app.core.database import get_db
 from app.routes.address import router as address_router
+from app.routes.profile_type import router as profile_type_router
 
 router = APIRouter()
 router.include_router(address_router)
+router.include_router(profile_type_router)
 
 
 @router.get(

@@ -10,6 +10,7 @@
 ## Documentos detalhados
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
+- Tabela ProfileType: docs/profile_type.md
 
 ## Estrutura atual
 - app/core: configuracao e conexao com banco
