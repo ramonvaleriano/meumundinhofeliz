@@ -60,3 +60,18 @@ Possiveis erros:
 - .env com DATABASE_URL
 - Exemplo:
   DATABASE_URL="postgresql+psycopg2://postgres@localhost:5432/meumundinho"
+
+## Migrations (Alembic)
+O projeto ja esta configurado para migrations automaticas via Alembic.
+
+Comandos basicos:
+```bash
+cd backend
+source .venv/bin/activate
+alembic upgrade head
+```
+
+Para criar novas migrations (quando adicionar/alterar models):
+```bash
+alembic revision --autogenerate -m "descricao"
+```

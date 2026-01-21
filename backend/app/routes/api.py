@@ -3,8 +3,10 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.core.database import get_db
+from app.routes.address import router as address_router
 
 router = APIRouter()
+router.include_router(address_router)
 
 
 @router.get(

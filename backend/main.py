@@ -4,11 +4,13 @@ from fastapi import FastAPI
 
 from app.core.config import settings
 from app.core.database import ensure_database_exists
+from app.core.migrations import run_migrations
 from app.routes import router as api_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     ensure_database_exists()
+    run_migrations()
     yield
 
 
