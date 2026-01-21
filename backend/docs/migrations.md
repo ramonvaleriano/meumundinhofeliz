@@ -16,6 +16,7 @@ Arquivos principais:
 - `backend/alembic/env.py`: integra o Alembic com o projeto e carrega os models
 - `backend/app/core/migrations.py`: executa `alembic upgrade head` via codigo
 - `backend/app/core/database.py`: cria o banco, se ele nao existir
+- `backend/app/core/config.py`: deriva a URL sincrona para o Alembic quando a URL principal usa asyncpg
 
 ## Validacao e criacao do banco
 O projeto faz duas coisas automaticamente ao iniciar:
@@ -50,6 +51,8 @@ Isso significa que:
 
 ## Detalhes importantes
 - O usuario do `DATABASE_URL` precisa ter permissao para criar banco e alterar schema.
+- A API usa `asyncpg` (URL async), mas o Alembic roda com URL sincronizada automaticamente.
+- Mantenha `psycopg2-binary` no ambiente para o Alembic e para a criacao automatica do banco.
 - Se houver erro de migration, a API pode nao iniciar. A falha aparece no log do servidor.
 - O Alembic so aplica migrations existentes. Ele nao cria migrations automaticamente. Voce precisa gerar o arquivo com `alembic revision --autogenerate`.
 

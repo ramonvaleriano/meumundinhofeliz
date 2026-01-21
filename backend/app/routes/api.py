@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy import text
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.routes.address import router as address_router
@@ -27,8 +27,8 @@ def healthcheck():
     summary="Healthcheck do banco de dados",
     description="Verifica se o banco de dados esta acessivel.",
 )
-def db_healthcheck(db: Session = Depends(get_db)):
-    db.execute(text("SELECT 1"))
+async def db_healthcheck(db: AsyncSession = Depends(get_db)):
+    await db.execute(text("SELECT 1"))
     return {"status": "ok", "database": "up"}
 
 @router.get("/")

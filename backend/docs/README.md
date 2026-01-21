@@ -6,6 +6,7 @@
 - PostgreSQL
 - SQLAlchemy
 - Alembic
+- asyncpg
 
 ## Documentos detalhados
 - Migrations: docs/migrations.md
@@ -65,7 +66,7 @@ Possiveis erros:
 ## Configuracao
 - .env com DATABASE_URL
 - Exemplo:
-  DATABASE_URL="postgresql+psycopg2://postgres@localhost:5432/meumundinho"
+  DATABASE_URL="postgresql+asyncpg://postgres@localhost:5432/meumundinho"
 
 ## Migrations (Alembic)
 O projeto ja esta configurado para migrations automaticas via Alembic.

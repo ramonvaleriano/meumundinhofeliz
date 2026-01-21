@@ -1,34 +1,41 @@
-from sqlalchemy.orm import Session
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.address import Address
 from app.schemas.address import AddressCreate, AddressUpdate
 
 
-def create_address(db: Session, payload: AddressCreate) -> Address:
+async def create_address(db: AsyncSession, payload: AddressCreate) -> Address:
     address = Address(**payload.dict())
     db.add(address)
-    db.commit()
-    db.refresh(address)
+    await db.commit()
+    await db.refresh(address)
     return address
 
 
-def get_address(db: Session, address_id: int) -> Address | None:
-    return db.query(Address).filter(Address.id == address_id).first()
+async def get_address(db: AsyncSession, address_id: int) -> Address | None:
+    result = await db.execute(select(Address).where(Address.id == address_id))
+    return result.scalar_one_or_none()
 
 
-def list_addresses(db: Session, skip: int = 0, limit: int = 100) -> list[Address]:
-    return db.query(Address).offset(skip).limit(limit).all()
+async def list_addresses(
+    db: AsyncSession, skip: int = 0, limit: int = 100
+) -> list[Address]:
+    result = await db.execute(select(Address).offset(skip).limit(limit))
+    return list(result.scalars().all())
 
 
-def update_address(db: Session, address: Address, payload: AddressUpdate) -> Address:
+async def update_address(
+    db: AsyncSession, address: Address, payload: AddressUpdate
+) -> Address:
     data = payload.dict(exclude_unset=True)
     for key, value in data.items():
         setattr(address, key, value)
-    db.commit()
-    db.refresh(address)
+    await db.commit()
+    await db.refresh(address)
     return address
 
 
-def delete_address(db: Session, address: Address) -> None:
-    db.delete(address)
-    db.commit()
+async def delete_address(db: AsyncSession, address: Address) -> None:
+    await db.delete(address)
+    await db.commit()
