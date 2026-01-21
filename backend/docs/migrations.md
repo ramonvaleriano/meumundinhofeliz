@@ -53,6 +53,7 @@ Isso significa que:
 - O usuario do `DATABASE_URL` precisa ter permissao para criar banco e alterar schema.
 - A API usa `asyncpg` (URL async), mas o Alembic roda com URL sincronizada automaticamente.
 - Mantenha `psycopg2-binary` no ambiente para o Alembic e para a criacao automatica do banco.
+- A tabela `profile_type` possui uma migration de seed que preenche dados iniciais apenas se a tabela estiver vazia.
 - Se houver erro de migration, a API pode nao iniciar. A falha aparece no log do servidor.
 - O Alembic so aplica migrations existentes. Ele nao cria migrations automaticamente. Voce precisa gerar o arquivo com `alembic revision --autogenerate`.
 

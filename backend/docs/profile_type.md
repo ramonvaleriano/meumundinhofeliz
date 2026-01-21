@@ -110,3 +110,75 @@ Response:
 - As migrations garantem que a tabela exista antes de usar as rotas.
 - Se novas colunas forem adicionadas, e necessario criar migration.
 - As rotas aparecem no `/docs` e `/redoc` do FastAPI.
+
+## Dados iniciais (seed automatico)
+Existe uma migration que popula automaticamente a tabela quando ela estiver vazia. Isso garante que, em um banco novo, os tipos de perfil ja estejam disponiveis sem necessidade de insercao manual.
+
+Lista de valores inseridos:
+- Médico(a)
+- Pediatra
+- Neuropediatra
+- Neurologista
+- Psiquiatra
+- Psiquiatra Infantil
+- Geneticista
+- Médico(a) de Família e Comunidade
+- Médico(a) do Desenvolvimento e Comportamento (quando disponível)
+- Gastroenterologista
+- Alergista/Imunologista
+- Otorrinolaringologista
+- Oftalmologista
+- Pneumologista
+- Endocrinologista
+- Dermatologista
+- Ortopedista
+- Médico(a) do Sono
+- Fisiatra (Medicina Física e Reabilitação)
+- Psicólogo(a)
+- Neuropsicólogo(a)
+- Psicoterapeuta
+- Analista do Comportamento (ABA)
+- Supervisor(a) ABA
+- Terapeuta ABA
+- Acompanhante Terapêutico(a) (AT)
+- Psicopedagogo(a)
+- Fonoaudiólogo(a)
+- Terapeuta Ocupacional
+- Fisioterapeuta
+- Psicomotricista
+- Terapeuta Psicomotor(a)
+- Educador(a) Físico(a)
+- Professor(a) de Educação Física Adaptada
+- Especialista em Comunicação Alternativa e Aumentativa (CAA)
+- Intérprete de Libras
+- Guia-intérprete (quando aplicável)
+- Nutricionista
+- Terapeuta Alimentar (seletividade/introdução alimentar - quando houver essa função no serviço)
+- Fonoaudiólogo(a) (disfagia/alimentação - quando aplicável)
+- Enfermeiro(a)
+- Técnico(a) de Enfermagem
+- Cirurgião(ã)-Dentista
+- Odontopediatra
+- Assistente Social
+- Professor(a)
+- Professor(a) Regente
+- Professor(a) de Educação Especial
+- Professor(a) do AEE (Atendimento Educacional Especializado)
+- Coordenador(a) Pedagógico(a)
+- Orientador(a) Educacional
+- Psicólogo(a) Escolar
+- Mediador(a) Escolar
+- Acompanhante Escolar
+- Cuidador(a) Escolar
+- Tutor(a) Escolar (quando usado pela instituição)
+- Professor(a) de Apoio
+- Musicoterapeuta
+- Arteterapeuta
+- Terapeuta de Integração Sensorial (especialização/ênfase em TO)
+- Equoterapeuta (quando praticado em programas específicos)
+- Terapeuta Assistido por Animais (quando existente no serviço)
+- Farmacêutico(a) (quando há acompanhamento de medicação)
+- Fonoaudiólogo(a) Educacional (quando aplicável)
+- Terapeuta Familiar (quando aplicável)
+- País
+- Responsável Legal
