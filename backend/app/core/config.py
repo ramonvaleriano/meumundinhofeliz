@@ -1,12 +1,18 @@
-from pydantic_settings import BaseSettings
+import os
+
+from dotenv import load_dotenv
 
 
-class Settings(BaseSettings):
-    project_name: str = "Meu Mundinho Feliz API"
-    database_url: str
+load_dotenv()
 
-    class Config:
-        env_file = ".env"
+
+class Settings:
+    def __init__(self) -> None:
+        self.project_name = os.getenv("PROJECT_NAME", "Meu Mundinho Feliz API")
+        self.database_url = os.getenv("DATABASE_URL")
+        self.crypto_key = os.getenv("CRYPTO_KEY")
+        if not self.database_url:
+            raise ValueError("DATABASE_URL nao definido")
 
     @property
     def database_url_sync(self) -> str:
