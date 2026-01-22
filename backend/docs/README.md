@@ -11,6 +11,7 @@
 ## Documentos detalhados
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
+- Tabela FeatureFlag: docs/feature_flag.md
 - Tabela ProfileType: docs/profile_type.md
 
 ## Estrutura atual

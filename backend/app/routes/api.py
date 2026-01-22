@@ -4,10 +4,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_db
 from app.routes.address import router as address_router
+from app.routes.feature_flag import router as feature_flag_router
 from app.routes.profile_type import router as profile_type_router
 
 router = APIRouter()
 router.include_router(address_router)
+router.include_router(feature_flag_router)
 router.include_router(profile_type_router)
 
 
