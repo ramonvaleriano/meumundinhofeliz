@@ -173,3 +173,25 @@ Response:
 - O `uuid` nao deve ser alterado manualmente.
 - O campo `password` salvo no banco e criptografado.
 - Para autenticar usuarios, e recomendado usar hash (ex: bcrypt) em vez de criptografia reversivel.
+
+## Dados iniciais (seed automatico)
+Existe uma migration que popula automaticamente a tabela quando ela estiver vazia. Isso garante que, em um banco novo, o usuario administrador ja esteja disponivel sem insercao manual.
+
+Usuario admin inserido:
+```json
+{
+  "name": "Admin",
+  "surname": "Admin",
+  "email": "ana.admin@empresa.com.br",
+  "cpf": "987.654.321-11",
+  "password": "meumundinho12345",
+  "role": [1, 2],
+  "is_active": true,
+  "is_verified": true
+}
+```
+
+Observacoes:
+- `uuid` e gerado por `UserIdentityCipher.create_hash`.
+- `token` e gerado por `UserIdentityCipher.create_token`.
+- `password` e criptografado por `PasswordCipher.encrypt`.

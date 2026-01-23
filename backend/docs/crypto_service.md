@@ -31,6 +31,10 @@ CRYPTO_KEY="meumundo"
 
 Observacao: o Fernet exige uma chave no formato base64. Se a chave nao estiver no formato correto, o servico pode falhar ao iniciar. 
 
+Atualizacao recente:
+- O servico agora deriva automaticamente uma chave Fernet valida usando `derive_fernet_key`.
+- Isso permite usar uma chave simples no `.env` e evita erros de formato.
+
 ## Metodos
 ### 1) encrypt(password: str) -> str
 Criptografa uma string e retorna o token.

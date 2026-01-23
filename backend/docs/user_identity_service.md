@@ -42,6 +42,8 @@ A funcao `derive_fernet_key` transforma uma string simples em uma chave valida p
 
 Isso permite que voce use uma chave simples no `.env` (ex: `meumundo`) sem quebrar o funcionamento do Fernet.
 
+Observacao: o mesmo derivador (`derive_fernet_key`) passou a ser utilizado no `PasswordCipher` para evitar erros de formato no `CRYPTO_KEY`.
+
 ## Metodos
 ### 1) create_hash(name: str, cpf: str, email: str) -> str
 Gera um hash reversivel com base nos dados informados.
