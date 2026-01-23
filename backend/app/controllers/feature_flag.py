@@ -13,7 +13,7 @@ def _require_updated_by(payload: FeatureFlagUpdate):
 async def create_feature_flag(
     db: AsyncSession, payload: FeatureFlagCreate
 ) -> FeatureFlag:
-    feature_flag = FeatureFlag(**payload.dict())
+    feature_flag = FeatureFlag(**payload.model_dump())
     db.add(feature_flag)
     await db.commit()
     await db.refresh(feature_flag)
@@ -36,7 +36,7 @@ async def update_feature_flag(
     db: AsyncSession, feature_flag: FeatureFlag, payload: FeatureFlagUpdate
 ) -> FeatureFlag:
     _require_updated_by(payload)
-    data = payload.dict(exclude_unset=True)
+    data = payload.model_dump(exclude_unset=True)
     for key, value in data.items():
         setattr(feature_flag, key, value)
     await db.commit()

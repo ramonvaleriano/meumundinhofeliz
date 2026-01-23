@@ -9,6 +9,7 @@ from app.schemas.profile_type import (
     ProfileTypeRead,
     ProfileTypeUpdate,
 )
+from app.schemas.user import UserCreate, UserRead, UserUpdate
 
 __all__ = [
     "AddressCreate",
@@ -20,4 +21,7 @@ __all__ = [
     "ProfileTypeCreate",
     "ProfileTypeRead",
     "ProfileTypeUpdate",
+    "UserCreate",
+    "UserRead",
+    "UserUpdate",
 ]

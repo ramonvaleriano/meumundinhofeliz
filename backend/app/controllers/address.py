@@ -6,7 +6,7 @@ from app.schemas.address import AddressCreate, AddressUpdate
 
 
 async def create_address(db: AsyncSession, payload: AddressCreate) -> Address:
-    address = Address(**payload.dict())
+    address = Address(**payload.model_dump())
     db.add(address)
     await db.commit()
     await db.refresh(address)
@@ -28,7 +28,7 @@ async def list_addresses(
 async def update_address(
     db: AsyncSession, address: Address, payload: AddressUpdate
 ) -> Address:
-    data = payload.dict(exclude_unset=True)
+    data = payload.model_dump(exclude_unset=True)
     for key, value in data.items():
         setattr(address, key, value)
     await db.commit()

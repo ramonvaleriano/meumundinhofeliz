@@ -8,7 +8,7 @@ from app.schemas.profile_type import ProfileTypeCreate, ProfileTypeUpdate
 async def create_profile_type(
     db: AsyncSession, payload: ProfileTypeCreate
 ) -> ProfileType:
-    profile_type = ProfileType(**payload.dict())
+    profile_type = ProfileType(**payload.model_dump())
     db.add(profile_type)
     await db.commit()
     await db.refresh(profile_type)
@@ -34,7 +34,7 @@ async def list_profile_types(
 async def update_profile_type(
     db: AsyncSession, profile_type: ProfileType, payload: ProfileTypeUpdate
 ) -> ProfileType:
-    data = payload.dict(exclude_unset=True)
+    data = payload.model_dump(exclude_unset=True)
     for key, value in data.items():
         setattr(profile_type, key, value)
     await db.commit()
