@@ -11,6 +11,7 @@ class Settings:
         self.project_name = os.getenv("PROJECT_NAME", "Meu Mundinho Feliz API")
         self.database_url = os.getenv("DATABASE_URL")
         self.crypto_key = os.getenv("CRYPTO_KEY")
+        self.user_hash_key = os.getenv("USER_HASH_KEY")
         if not self.database_url:
             raise ValueError("DATABASE_URL nao definido")
 
