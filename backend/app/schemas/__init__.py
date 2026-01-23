@@ -10,6 +10,7 @@ from app.schemas.profile_type import (
     ProfileTypeUpdate,
 )
 from app.schemas.user import UserCreate, UserRead, UserUpdate
+from app.schemas.auth import LoginRequest, TokenResponse
 
 __all__ = [
     "AddressCreate",
@@ -21,6 +22,8 @@ __all__ = [
     "ProfileTypeCreate",
     "ProfileTypeRead",
     "ProfileTypeUpdate",
+    "LoginRequest",
+    "TokenResponse",
     "UserCreate",
     "UserRead",
     "UserUpdate",
