@@ -15,6 +15,7 @@
 - Servico de Identidade: docs/user_identity_service.md
 - Tabela FeatureFlag: docs/feature_flag.md
 - Tabela ProfileType: docs/profile_type.md
+- Tabela Users: docs/users.md
 
 ## Estrutura atual
 - app/core: configuracao e conexao com banco
