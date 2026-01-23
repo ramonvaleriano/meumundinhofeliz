@@ -1,4 +1,5 @@
 from sqlalchemy import select
+from sqlalchemy.sql import func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.user import User
@@ -36,6 +37,7 @@ async def login(db: AsyncSession, email: str, password: str) -> str:
     identity = UserIdentityCipher()
     token = identity.create_token(user.cpf, user.email)
     user.token = token
+    user.last_login = func.now()
     await db.commit()
     await db.refresh(user)
     return token
@@ -65,6 +67,7 @@ async def refresh_token(db: AsyncSession, uuid: str, token: str) -> str:
 
     new_token = identity.create_token(user.cpf, user.email)
     user.token = new_token
+    user.last_login = func.now()
     await db.commit()
     await db.refresh(user)
     return new_token

@@ -13,6 +13,7 @@
 - Tabela Address: docs/address.md
 - Servico de Criptografia: docs/crypto_service.md
 - Servico de Identidade: docs/user_identity_service.md
+- Auth: docs/auth.md
 - Tabela FeatureFlag: docs/feature_flag.md
 - Tabela ProfileType: docs/profile_type.md
 - Tabela Users: docs/users.md
