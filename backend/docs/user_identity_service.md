@@ -74,6 +74,32 @@ Exemplo de retorno:
 }
 ```
 
+### 3) create_token(cpf: str, email: str) -> str
+Gera um token temporario (expira) apenas com `cpf` e `email`.
+
+Exemplo:
+```python
+from app.services.user_identity_service import UserIdentityCipher
+
+cipher = UserIdentityCipher()
+token = cipher.create_token("123.456.789-00", "ana@email.com")
+```
+
+### 4) validate_token(token_hex: str) -> tuple[bool, dict]
+Valida se o token ainda esta dentro do tempo de expiracao. O tempo e configurado em `TOKEN_EXP_MINUTES` no `.env`.
+
+Retornos:
+- `(True, {"cpf": "...", "email": "..."})` se valido
+- `(False, {"cpf": None, "email": None})` se expirado ou invalido
+
+### 5) verify_token_for_cpf(token_hex: str, cpf: str) -> tuple[bool, dict]
+Valida o token e confirma se o `cpf` informado corresponde ao do token.
+
+Retornos:
+- `(False, {"message": "token expirado", "cpf": None, "email": None})` se expirado
+- `(False, {"message": "usuario nao e compativel ao cpf", "cpf": "...", "email": "..."})` se cpf nao corresponder
+- `(True, {"cpf": "...", "email": "..."})` se valido e cpf correto
+
 ## Erros comuns
 - `ValueError: USER_HASH_KEY nao definido`: a variavel nao foi configurada no `.env`.
 - `ValueError: Hash invalido ou chave incorreta`: o token foi alterado ou a chave esta errada.

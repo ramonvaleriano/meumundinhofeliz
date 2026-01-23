@@ -12,6 +12,7 @@ class Settings:
         self.database_url = os.getenv("DATABASE_URL")
         self.crypto_key = os.getenv("CRYPTO_KEY")
         self.user_hash_key = os.getenv("USER_HASH_KEY")
+        self.token_exp_minutes = int(os.getenv("TOKEN_EXP_MINUTES", "30"))
         if not self.database_url:
             raise ValueError("DATABASE_URL nao definido")
 
