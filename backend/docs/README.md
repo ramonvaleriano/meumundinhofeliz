@@ -12,6 +12,7 @@
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
 - Servico de Criptografia: docs/crypto_service.md
+- Servico de Identidade: docs/user_identity_service.md
 - Tabela FeatureFlag: docs/feature_flag.md
 - Tabela ProfileType: docs/profile_type.md
 
