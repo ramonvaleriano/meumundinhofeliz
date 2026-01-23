@@ -28,6 +28,7 @@ async def create_user(db: AsyncSession, payload: UserCreate) -> User:
     password_cipher = PasswordCipher()
 
     uuid = identity.create_hash(payload.name, payload.cpf, payload.email)
+    token = identity.create_token(payload.cpf, payload.email)
     password = password_cipher.encrypt(payload.password)
 
     role = payload.role
@@ -38,6 +39,7 @@ async def create_user(db: AsyncSession, payload: UserCreate) -> User:
         name=payload.name,
         surname=payload.surname,
         uuid=uuid,
+        token=token,
         email=payload.email,
         cpf=payload.cpf,
         password=password,

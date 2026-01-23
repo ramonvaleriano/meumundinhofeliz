@@ -41,6 +41,7 @@ class UserRead(BaseModel):
     name: str
     surname: str
     uuid: str
+    token: str
     email: str
     cpf: str
     password: str

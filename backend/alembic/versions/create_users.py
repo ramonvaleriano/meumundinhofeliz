@@ -23,6 +23,7 @@ def upgrade() -> None:
         sa.Column("name", sa.Text(), nullable=False),
         sa.Column("surname", sa.Text(), nullable=False),
         sa.Column("uuid", sa.Text(), nullable=False),
+        sa.Column("token", sa.Text(), nullable=False),
         sa.Column("email", sa.Text(), nullable=False),
         sa.Column("cpf", sa.Text(), nullable=False),
         sa.Column("password", sa.Text(), nullable=False),

@@ -11,6 +11,7 @@ class User(Base):
     name = Column(Text, nullable=False)
     surname = Column(Text, nullable=False)
     uuid = Column(Text, nullable=False)
+    token = Column(Text, nullable=False)
     email = Column(Text, nullable=False)
     cpf = Column(Text, nullable=False)
     password = Column(Text, nullable=False)

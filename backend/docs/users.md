@@ -13,6 +13,7 @@ Colunas:
 - `name` (string, obrigatorio)
 - `surname` (string, obrigatorio)
 - `uuid` (string longa, obrigatorio, gerado automaticamente)
+- `token` (string longa, obrigatorio, refresh token gerado automaticamente)
 - `email` (string, obrigatorio)
 - `cpf` (string, obrigatorio)
 - `password` (string, obrigatorio, criptografado)
@@ -35,6 +36,12 @@ O campo `uuid` nao pode ser alterado. Ele e gerado no momento da criacao usando 
 
 ```
 create_hash(name, cpf, email)
+```
+
+### 2) token automatico (refresh token)
+O campo `token` e gerado no momento da criacao usando `UserIdentityCipher` com:
+```
+create_token(cpf, email)
 ```
 
 ### 2) password criptografado
