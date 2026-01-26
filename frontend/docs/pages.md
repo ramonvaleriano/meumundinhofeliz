@@ -1,13 +1,23 @@
 # Paginas
 
-## Pagina inicial
+## Pagina inicial (Login)
 Arquivo:
-- `src/App.tsx`
+- `src/modules/auth/ui/LoginPage.tsx`
 
 Conteudo:
-- Marca "Meu Mundinho Feliz"
+- Marca \"Meu Mundinho Feliz\"
 - Texto introdutorio
 - Card de login
-- Card de criar conta
+- Botao para criar conta
+- Fundo com imagem tematica
+
+## Pagina Criar Conta
+Arquivo:
+- `src/modules/auth/ui/SignupPage.tsx`
+
+Campos:
+- Nome, Sobrenome, Data de nascimento, CPF, Celular
+- E-mail, Senha
+- Endereco completo
 
 Sem integracao com backend por enquanto.

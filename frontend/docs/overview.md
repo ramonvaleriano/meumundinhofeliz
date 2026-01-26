@@ -7,4 +7,7 @@ Principais pastas:
 - `src/shared`: componentes e utilitarios reutilizaveis
 - `src/modules`: features por dominio (auth, users, addresses, etc.)
 
-A primeira tela esta em `src/App.tsx` (pagina inicial).
+A pagina inicial (login) esta em `src/modules/auth/ui/LoginPage.tsx`.
+A pagina de cadastro esta em `src/modules/auth/ui/SignupPage.tsx`.
+As rotas ficam em `src/App.tsx`.
+Os assets visuais ficam em `src/assets/`.

@@ -15,6 +15,10 @@ npm install
 npm run dev
 ```
 
+## Rotas disponiveis
+- `/` (login)
+- `/criar-conta` (cadastro)
+
 ## Build
 ```bash
 npm run build

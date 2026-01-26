@@ -20,5 +20,11 @@
 Arquivo:
 - `src/assets/logo-mundinho.png`
 
+## Fundo
+Arquivo:
+- `src/assets/bg-mundinho.png`
+
+O fundo usa a imagem com um gradiente suave para manter legibilidade.
+
 ## Observacoes
 O estilo esta centralizado em `src/index.css` e `src/App.css`.

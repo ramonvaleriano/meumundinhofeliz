@@ -24,7 +24,8 @@
 
 body {
   margin: 0;
-  background: radial-gradient(1200px 800px at 10% 10%, #fff4d6 0%, #ffffff 38%, #f3f7ff 70%, #eef7f2 100%);
+  background: url('./assets/bg-mundinho.png') center/cover no-repeat fixed,
+    radial-gradient(1200px 800px at 10% 10%, #fff4d6 0%, #ffffff 38%, #f3f7ff 70%, #eef7f2 100%);
   color: var(--ink);
   min-height: 100vh;
 }

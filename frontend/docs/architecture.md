@@ -4,7 +4,7 @@ Estrutura:
 ```
 src/
   app/
-    routes/        # roteamento
+    routes/        # roteamento (ainda simples, centralizado em App.tsx)
     providers/     # providers globais
     styles/        # estilos globais
   shared/
