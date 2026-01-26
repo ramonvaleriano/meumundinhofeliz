@@ -5,7 +5,7 @@ Arquivo:
 - `src/modules/auth/ui/LoginPage.tsx`
 
 Conteudo:
-- Marca \"Meu Mundinho Feliz\"
+- Marca \"ConectVida\"
 - Texto introdutorio
 - Card de login
 - Botao para criar conta

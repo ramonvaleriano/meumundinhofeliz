@@ -9,11 +9,11 @@ export function LoginPage() {
             <img
               className="brand-icon"
               src={"/src/assets/logo-mundinho.png"}
-              alt="Logo do Meu Mundinho Feliz"
+              alt="Logo do ConectVida"
             />
             <div>
               <p className="brand-tag">Comunidade, cuidado e conhecimento</p>
-              <h1>Meu Mundinho Feliz</h1>
+              <h1>ConectVida</h1>
             </div>
           </div>
           <p className="hero-text">
@@ -50,7 +50,7 @@ export function LoginPage() {
       </main>
 
       <footer className="footer">
-        <p>Meu Mundinho Feliz • Cuidado e conhecimento para a comunidade TEA</p>
+        <p>ConectVida • Cuidado e conhecimento para a comunidade TEA</p>
       </footer>
     </div>
   )

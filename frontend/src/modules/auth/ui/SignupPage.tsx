@@ -9,7 +9,7 @@ export function SignupPage() {
             <img
               className="brand-icon"
               src={"/src/assets/logo-mundinho.png"}
-              alt="Logo do Meu Mundinho Feliz"
+              alt="Logo do ConectVida"
             />
             <div>
               <p className="brand-tag">Cadastro inicial</p>
@@ -17,7 +17,7 @@ export function SignupPage() {
             </div>
           </div>
           <p className="hero-text">
-            Preencha seus dados e o endereco para iniciar sua jornada no Meu Mundinho Feliz.
+            Preencha seus dados e o endereco para iniciar sua jornada no ConectVida.
           </p>
           <div className="color-ribbon" aria-hidden="true">
             <span />
