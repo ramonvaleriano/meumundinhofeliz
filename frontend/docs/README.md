@@ -1,13 +1,16 @@
 # Documentacao Frontend
 
+Este conjunto de documentos explica a estrutura, o funcionamento e as decisoes do frontend. Tudo foi escrito para quem nao tem experiencia com frontend.
+
 ## Sumario
 - Visao geral: docs/overview.md
-- Arquitetura: docs/architecture.md
-- Setup: docs/setup.md
+- Arquitetura (DDD): docs/architecture.md
+- Setup e comandos: docs/setup.md
 - Variaveis de ambiente: docs/environment.md
-- Design: docs/design.md
-- Paginas: docs/pages.md
-- Rotas: docs/pages.md (login e criar conta)
+- Design e identidade visual: docs/design.md
+- Paginas e fluxo: docs/pages.md
 
-## Observacao
-Toda a documentacao do frontend esta em `frontend/docs/`.
+## Onde ficam os arquivos
+- Codigo: `frontend/src/`
+- Assets (imagens): `frontend/src/assets/`
+- Documentacao: `frontend/docs/`

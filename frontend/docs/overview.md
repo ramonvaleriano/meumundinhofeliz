@@ -1,13 +1,28 @@
-# Visao Geral do Frontend
+# Visao Geral
 
-O frontend e uma SPA em React + Vite + TypeScript. A arquitetura segue DDD por modulos e separa responsabilidades em camadas.
+Este frontend e uma SPA (Single Page Application) feita com React + Vite + TypeScript.
 
-Principais pastas:
-- `src/app`: configuracoes globais
-- `src/shared`: componentes e utilitarios reutilizaveis
-- `src/modules`: features por dominio (auth, users, addresses, etc.)
+## O que isso significa
+- **SPA**: a pagina nao recarrega a cada clique; o React troca o conteudo.
+- **Vite**: servidor rapido para desenvolvimento e build.
+- **TypeScript**: adiciona tipos para reduzir erros.
 
-A pagina inicial (login) esta em `src/modules/auth/ui/LoginPage.tsx`.
-A pagina de cadastro esta em `src/modules/auth/ui/SignupPage.tsx`.
-As rotas ficam em `src/App.tsx`.
-Os assets visuais ficam em `src/assets/`.
+## Pastas importantes
+- `src/`: codigo do app
+- `src/modules/`: funcionalidades separadas por modulo (auth, users, etc.)
+- `src/shared/`: componentes e utilitarios reutilizaveis
+- `src/assets/`: imagens (logo e fundo)
+- `src/App.tsx`: definicao das rotas
+- `src/main.tsx`: ponto de entrada do React
+
+## Rotas atuais
+- `/` -> Login
+- `/criar-conta` -> Cadastro inicial
+
+## Integração inicial com backend
+- O cadastro inicial carrega **Tipo de Perfil** da API.
+- A URL da API vem do `.env`.
+
+Arquivos principais:
+- `src/shared/services/env.ts`
+- `src/modules/auth/ui/SignupPage.tsx`

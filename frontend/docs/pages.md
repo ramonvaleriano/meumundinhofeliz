@@ -1,23 +1,50 @@
-# Paginas
+# Paginas e Fluxo
 
-## Pagina inicial (Login)
+## 1) Login (pagina inicial)
 Arquivo:
 - `src/modules/auth/ui/LoginPage.tsx`
 
 Conteudo:
-- Marca \"ConectVida\"
+- Logo e titulo "ConectVida"
 - Texto introdutorio
-- Card de login
-- Botao para criar conta
-- Fundo com imagem tematica
+- Formulario de login (email e senha)
+- Link "Esqueci minha senha" (placeholder)
+- Botao "Criar conta" que leva para `/criar-conta`
 
-## Pagina Criar Conta
+## 2) Criar Conta
 Arquivo:
 - `src/modules/auth/ui/SignupPage.tsx`
 
-Campos:
-- Nome, Sobrenome, Data de nascimento, CPF, Celular
-- E-mail, Senha
-- Endereco completo
+### Sessao: Dados pessoais
+Campos obrigatorios:
+- Nome
+- Sobrenome
+- Data de nascimento
+- CPF
+- Celular
+- E-mail
+- Senha
 
-Sem integracao com backend por enquanto.
+### Sessao: Tipo de Perfil
+- Campo select que carrega dados da API
+- Endpoint: `GET /api/profile-types/all`
+- Exibe o `user_type`
+- Guarda `id` e `user_type` no estado
+
+### Sessao: Endereco
+Campos:
+- CEP
+- Tipo de logradouro (select)
+- Logradouro
+- Bairro
+- Estado
+- Numero
+- Complemento (opcional)
+- Referencia (opcional)
+
+## Fluxo atual
+1) Usuario entra em `/`
+2) Clica em "Criar conta"
+3) Preenche formulario em `/criar-conta`
+
+Sem envio para backend por enquanto (apenas UI).

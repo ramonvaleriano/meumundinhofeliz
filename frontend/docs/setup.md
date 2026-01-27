@@ -1,7 +1,7 @@
 # Setup do Frontend
 
 ## Requisitos
-- Node 18+
+- Node 18+ (ou superior)
 - npm
 
 ## Instalar dependencias
@@ -15,16 +15,22 @@ npm install
 npm run dev
 ```
 
-## Rotas disponiveis
-- `/` (login)
-- `/criar-conta` (cadastro)
+Abra no navegador:
+- http://localhost:5173
 
-## Build
+## Build de producao
 ```bash
 npm run build
 ```
 
-## Preview
+## Preview do build
 ```bash
 npm run preview
 ```
+
+## Rotas disponiveis
+- `/` (login)
+- `/criar-conta` (cadastro)
+
+## Dica para iniciantes
+Sempre que mudar o `.env`, pare o servidor e rode `npm run dev` novamente.
