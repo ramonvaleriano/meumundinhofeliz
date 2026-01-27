@@ -31,6 +31,19 @@ Campos obrigatorios:
 - Exibe o `user_type`
 - Guarda `id` e `user_type` no estado
 
+### Regras de integracao (backend)
+1) Cria endereco em `POST /api/addresses/`
+2) Busca feature flags em `GET /api/feature-flags/?skip=0&limit=100`
+   - Se perfil for **País** ou **Responsável Legal** -> usa `average_user`
+   - Caso contrario -> usa `professional_tools`
+3) Cria usuario em `POST /api/users/` com:
+   - `is_active = true`
+   - `is_verified = true`
+   - `address = id` retornado do endereco
+   - `role = [id_da_feature_flag]`
+   - `last_login = new Date().toISOString()`
+Se qualquer passo falhar, mostra erro e permanece na pagina.
+
 ### Sessao: Endereco
 Campos:
 - CEP
@@ -46,5 +59,12 @@ Campos:
 1) Usuario entra em `/`
 2) Clica em "Criar conta"
 3) Preenche formulario em `/criar-conta`
+4) Se tudo der certo, vai para `/painel`
 
-Sem envio para backend por enquanto (apenas UI).
+Agora ja existe envio para backend no cadastro inicial.
+
+## 3) Painel
+Arquivo:
+- `src/modules/auth/ui/DashboardPage.tsx`
+
+Pagina placeholder para o painel interno.
