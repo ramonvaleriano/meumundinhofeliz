@@ -52,6 +52,15 @@ def upgrade() -> None:
             "created_by": None,
             "updated_by": None,
         },
+        {
+            "name_flag": "professional_tools",
+            "is_enabled": True,
+            "status": "active",
+            "strategy": "role_based_access",
+            "variation": '{"features": ["advanced_analytics", "bulk_export"], "allowed_roles": ["pro", "specialist"]}',
+            "created_by": None,
+            "updated_by": None,
+        },
     ]
 
     op.bulk_insert(feature_flag_table, values)

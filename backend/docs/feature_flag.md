@@ -151,3 +151,9 @@ Valores inseridos:
    - status: active
    - strategy: unrestricted_access
    - variation: {"allowed_roles": ["admin", "superadmin"], "visible_logs": true}
+
+3) professional_tools
+   - is_enabled: true
+   - status: active
+   - strategy: role_based_access
+   - variation: {"features": ["advanced_analytics", "bulk_export"], "allowed_roles": ["pro", "specialist"]}
