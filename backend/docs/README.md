@@ -15,6 +15,7 @@
 - Visao geral de rotas: docs/routes_overview.md
 - Services e Utils: docs/services_and_utils.md
 - Visao geral do banco: docs/database_overview.md
+- Troubleshooting: docs/troubleshooting.md
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
 - Servico de Criptografia: docs/crypto_service.md

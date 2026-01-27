@@ -42,6 +42,8 @@ async def create_user(db: AsyncSession, payload: UserCreate) -> User:
         token=token,
         email=payload.email,
         cpf=payload.cpf,
+        cellphone=payload.cellphone,
+        birth_date=payload.birth_date,
         password=password,
         address=payload.address,
         is_active=payload.is_active,

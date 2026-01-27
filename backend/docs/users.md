@@ -16,6 +16,8 @@ Colunas:
 - `token` (string longa, obrigatorio, refresh token gerado automaticamente)
 - `email` (string, obrigatorio)
 - `cpf` (string, obrigatorio)
+- `cellphone` (string, obrigatorio)
+- `birth_date` (string, obrigatorio)
 - `password` (string, obrigatorio, criptografado)
 - `address` (integer, FK para `address.id`, opcional)
 - `is_active` (boolean, obrigatorio, default `true`)
@@ -82,6 +84,8 @@ Exemplo de payload de criacao:
   "surname": "Silva",
   "email": "ana@email.com",
   "cpf": "123.456.789-00",
+  "cellphone": "(11) 99999-9999",
+  "birth_date": "2000-01-01",
   "password": "Senha@123",
   "address": 1,
   "is_active": true,
@@ -184,6 +188,8 @@ Usuario admin inserido:
   "surname": "Admin",
   "email": "ana.admin@empresa.com.br",
   "cpf": "987.654.321-11",
+  "cellphone": "00000000000",
+  "birth_date": "1900-01-01",
   "password": "meumundinho12345",
   "role": [1, 2],
   "is_active": true,

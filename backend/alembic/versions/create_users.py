@@ -26,6 +26,8 @@ def upgrade() -> None:
         sa.Column("token", sa.Text(), nullable=False),
         sa.Column("email", sa.Text(), nullable=False),
         sa.Column("cpf", sa.Text(), nullable=False),
+        sa.Column("cellphone", sa.Text(), nullable=False),
+        sa.Column("birth_date", sa.Text(), nullable=False),
         sa.Column("password", sa.Text(), nullable=False),
         sa.Column("address", sa.Integer(), sa.ForeignKey("address.id"), nullable=True),
         sa.Column("is_active", sa.Boolean(), nullable=False, server_default=sa.true()),
@@ -55,4 +57,4 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
-    op.drop_table("users")
+    op.execute("DROP TABLE IF EXISTS users CASCADE")

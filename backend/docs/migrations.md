@@ -56,6 +56,20 @@ Isso significa que:
 - A tabela `profile_type` possui uma migration de seed que preenche dados iniciais apenas se a tabela estiver vazia.
 - A tabela `feature_flag` possui uma migration de seed que preenche dados iniciais apenas se a tabela estiver vazia.
 - A tabela `users` possui uma migration de seed que preenche o usuario admin apenas se a tabela estiver vazia.
+- Revisoes do Alembic devem ter no maximo 32 caracteres para evitar erro em alguns bancos (coluna `alembic_version.version_num`).
+- Quando uma revisao for renomeada, e necessario atualizar o valor em `alembic_version` no banco.
+
+## Ajustes recentes (problemas comuns)
+### Erro de tamanho em `alembic_version`
+Se aparecer erro como `value too long for type character varying(32)`, significa que o `revision id` ultrapassou 32 caracteres.
+Solucao recomendada: manter os ids curtos (ex: `add_cellphone_birthdate`).
+
+### Erro: "Can't locate revision identified by ..."
+Isso ocorre quando a revisao foi renomeada no codigo mas o banco ainda aponta para o nome antigo.
+Solucao:\n
+```bash
+psql -U postgres -d meumundinho -c \"UPDATE alembic_version SET version_num='NOVO_ID' WHERE version_num='ID_ANTIGO';\"
+```
 - Se houver erro de migration, a API pode nao iniciar. A falha aparece no log do servidor.
 - O Alembic so aplica migrations existentes. Ele nao cria migrations automaticamente. Voce precisa gerar o arquivo com `alembic revision --autogenerate`.
 

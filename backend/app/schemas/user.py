@@ -8,6 +8,8 @@ class UserBase(BaseModel):
     surname: str = Field(..., example="Silva")
     email: str = Field(..., example="ana@email.com")
     cpf: str = Field(..., example="123.456.789-00")
+    cellphone: str = Field(..., example="(11) 99999-9999")
+    birth_date: str = Field(..., example="2000-01-01")
     password: str = Field(..., example="Senha@123")
     address: int | None = Field(default=None, example=1)
     is_active: bool = Field(default=True, example=True)
@@ -27,6 +29,8 @@ class UserUpdate(BaseModel):
     surname: str | None = Field(default=None, example="Silva")
     email: str | None = Field(default=None, example="ana@email.com")
     cpf: str | None = Field(default=None, example="123.456.789-00")
+    cellphone: str | None = Field(default=None, example="(11) 99999-9999")
+    birth_date: str | None = Field(default=None, example="2000-01-01")
     password: str | None = Field(default=None, example="Senha@123")
     address: int | None = Field(default=None, example=1)
     is_active: bool | None = Field(default=None, example=True)
@@ -44,6 +48,8 @@ class UserRead(BaseModel):
     token: str
     email: str
     cpf: str
+    cellphone: str
+    birth_date: str
     password: str
     address: int | None
     is_active: bool

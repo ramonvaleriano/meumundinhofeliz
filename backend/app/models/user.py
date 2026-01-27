@@ -14,6 +14,8 @@ class User(Base):
     token = Column(Text, nullable=False)
     email = Column(Text, nullable=False)
     cpf = Column(Text, nullable=False)
+    cellphone = Column(Text, nullable=False)
+    birth_date = Column(Text, nullable=False)
     password = Column(Text, nullable=False)
     address = Column(Integer, ForeignKey("address.id"), nullable=True)
     is_active = Column(Boolean, nullable=False, default=True)
