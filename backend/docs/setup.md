@@ -24,6 +24,11 @@ Crie/edite `backend/.env` com as variaveis obrigatorias. Veja `docs/environment.
 python3 main.py
 ```
 
+## CORS (Frontend local)
+O backend permite acesso do frontend local em:
+- `http://localhost:5173`
+- `http://127.0.0.1:5173`
+
 ## Rodar migrations manualmente
 ```bash
 PYTHONPATH=. alembic upgrade head
