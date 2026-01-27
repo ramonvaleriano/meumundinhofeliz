@@ -21,6 +21,7 @@ Base URL local: `http://127.0.0.1:8000`
 ## ProfileType
 - `POST /api/profile-types/`
 - `GET /api/profile-types/`
+- `GET /api/profile-types/all`
 - `GET /api/profile-types/{id}`
 - `PUT /api/profile-types/{id}`
 - `DELETE /api/profile-types/{id}`

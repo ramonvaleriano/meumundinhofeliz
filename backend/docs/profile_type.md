@@ -78,6 +78,15 @@ Query params:
 Response:
 - 200 com lista de `ProfileTypeRead`
 
+### 2.1) GET /api/profile-types/all
+Lista todos os tipos de perfil sem paginação/filtros.
+
+Response:
+- 200 com lista completa de `ProfileTypeRead`
+
+Observacao:
+- A rota `/all` deve ficar antes de `/{profile_type_id}` para evitar conflito.
+
 ### 3) GET /api/profile-types/{profile_type_id}
 Busca um tipo de perfil pelo ID.
 

@@ -19,19 +19,24 @@ async def create(payload: ProfileTypeCreate, db: AsyncSession = Depends(get_db))
     return await create_profile_type(db, payload)
 
 
+@router.get("/", response_model=list[ProfileTypeRead])
+async def list_all(
+    skip: int = 0, limit: int = 100, db: AsyncSession = Depends(get_db)
+):
+    return await list_profile_types(db, skip=skip, limit=limit)
+
+
+@router.get("/all", response_model=list[ProfileTypeRead])
+async def list_all_no_paging(db: AsyncSession = Depends(get_db)):
+    return await list_profile_types(db, skip=0, limit=10000)
+
+
 @router.get("/{profile_type_id}", response_model=ProfileTypeRead)
 async def read(profile_type_id: int, db: AsyncSession = Depends(get_db)):
     profile_type = await get_profile_type(db, profile_type_id)
     if not profile_type:
         raise HTTPException(status_code=404, detail="Perfil nao encontrado")
     return profile_type
-
-
-@router.get("/", response_model=list[ProfileTypeRead])
-async def list_all(
-    skip: int = 0, limit: int = 100, db: AsyncSession = Depends(get_db)
-):
-    return await list_profile_types(db, skip=skip, limit=limit)
 
 
 @router.put("/{profile_type_id}", response_model=ProfileTypeRead)
