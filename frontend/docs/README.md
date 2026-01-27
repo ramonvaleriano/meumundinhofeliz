@@ -18,6 +18,9 @@ Este conjunto de documentos explica a estrutura, o funcionamento e as decisoes d
 - Exemplos (dev): docs/examples.md
 - Index (IA): docs/frontend_index.json
 - Documentacao tecnica: docs/technical_overview.md
+- Payloads por pagina (IA): docs/page_payloads.json
+- Mapa de componentes: docs/components_map.md
+- Padroes de erro: docs/error_patterns.md
 
 ## Onde ficam os arquivos
 - Codigo: `frontend/src/`

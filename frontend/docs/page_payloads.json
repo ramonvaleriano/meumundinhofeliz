@@ -1,0 +1,64 @@
+{
+  "login": {
+    "path": "/",
+    "request": {
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "body": {
+        "email": "usuario@email.com",
+        "password": "Senha@123"
+      }
+    },
+    "response": {
+      "token": "..."
+    }
+  },
+  "signup": {
+    "path": "/criar-conta",
+    "steps": [
+      {
+        "endpoint": "/api/addresses/",
+        "method": "POST",
+        "body": {
+          "cep": "01000-000",
+          "estado": "SP",
+          "bairro": "Centro",
+          "tipo_logradouro": "Rua",
+          "logradouro": "Rua das Flores",
+          "numero": "123",
+          "complemento": null,
+          "referencia": null
+        },
+        "response": {"id": 1}
+      },
+      {
+        "endpoint": "/api/feature-flags/?skip=0&limit=100",
+        "method": "GET",
+        "rule": "average_user se País/Responsável Legal, senao professional_tools"
+      },
+      {
+        "endpoint": "/api/users/",
+        "method": "POST",
+        "body": {
+          "name": "Ana",
+          "surname": "Silva",
+          "email": "ana@email.com",
+          "cpf": "123.456.789-00",
+          "cellphone": "(11) 99999-9999",
+          "birth_date": "2000-01-01",
+          "password": "Senha@123",
+          "address": 1,
+          "is_active": true,
+          "is_verified": true,
+          "role": [2],
+          "last_login": "2026-01-27T18:47:07.608Z"
+        }
+      }
+    ]
+  },
+  "dashboard": {
+    "path": "/painel",
+    "request": null,
+    "response": null
+  }
+}
