@@ -1,0 +1,17 @@
+{
+  "pages": [
+    {"path": "/", "file": "src/modules/auth/ui/LoginPage.tsx"},
+    {"path": "/criar-conta", "file": "src/modules/auth/ui/SignupPage.tsx"}
+  ],
+  "assets": [
+    {"name": "logo", "file": "src/assets/logo-mundinho.png"},
+    {"name": "background", "file": "src/assets/bg-mundinho.png"}
+  ],
+  "env": {
+    "VITE_API_BASE_URL": "URL base da API"
+  },
+  "styles": [
+    "src/index.css",
+    "src/App.css"
+  ]
+}
