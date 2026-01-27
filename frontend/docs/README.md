@@ -4,6 +4,7 @@
 - Visao geral: docs/overview.md
 - Arquitetura: docs/architecture.md
 - Setup: docs/setup.md
+- Variaveis de ambiente: docs/environment.md
 - Design: docs/design.md
 - Paginas: docs/pages.md
 - Rotas: docs/pages.md (login e criar conta)

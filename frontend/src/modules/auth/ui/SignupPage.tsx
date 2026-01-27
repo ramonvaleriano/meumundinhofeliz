@@ -1,6 +1,31 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { env } from '@/shared/services/env'
+
+type ProfileType = {
+  id: number
+  user_type: string
+}
 
 export function SignupPage() {
+  const [profileTypes, setProfileTypes] = useState<ProfileType[]>([])
+  const [selectedProfileType, setSelectedProfileType] = useState<ProfileType | null>(null)
+
+  useEffect(() => {
+    const loadProfileTypes = async () => {
+      try {
+        const response = await fetch(`${env.apiBaseUrl}/api/profile-types/all`)
+        if (!response.ok) return
+        const data = (await response.json()) as ProfileType[]
+        setProfileTypes(data)
+      } catch {
+        setProfileTypes([])
+      }
+    }
+
+    loadProfileTypes()
+  }, [])
+
   return (
     <div className="page">
       <header className="hero">
@@ -59,6 +84,24 @@ export function SignupPage() {
             <label className="full">
               Senha
               <input type="password" placeholder="Crie uma senha" />
+            </label>
+            <label className="full">
+              Tipo de Perfil
+              <select
+                value={selectedProfileType?.id ?? ''}
+                onChange={(event) => {
+                  const id = Number(event.target.value)
+                  const found = profileTypes.find((item) => item.id === id) ?? null
+                  setSelectedProfileType(found)
+                }}
+              >
+                <option value="">Selecione</option>
+                {profileTypes.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.user_type}
+                  </option>
+                ))}
+              </select>
             </label>
           </form>
         </section>

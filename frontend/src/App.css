@@ -130,6 +130,7 @@ label {
   gap: 6px;
   font-weight: 600;
   color: var(--ink);
+  width: 100%;
 }
 
 input {
@@ -139,6 +140,8 @@ input {
   font-size: 1rem;
   background: #fbfcff;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 input:focus {
@@ -215,6 +218,8 @@ select {
   padding: 12px 14px;
   font-size: 1rem;
   background: #fbfcff;
+  width: 100%;
+  max-width: 100%;
 }
 
 .link {
