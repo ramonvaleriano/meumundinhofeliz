@@ -9,10 +9,15 @@ Este conjunto de documentos explica a estrutura, o funcionamento e as decisoes d
 - Variaveis de ambiente: docs/environment.md
 - Design e identidade visual: docs/design.md
 - Paginas e fluxo: docs/pages.md
+- Detalhe: Login (pagina): docs/pages/login.md
+- Detalhe: Criar conta (pagina): docs/pages/signup.md
+- Detalhe: Painel (pagina): docs/pages/painel.md
+- Diagramas simples: docs/pages/diagramas.md
 - Glossario (leigo): docs/glossario.md
 - Guia rapido (leigo): docs/quickstart_leigo.md
 - Exemplos (dev): docs/examples.md
 - Index (IA): docs/frontend_index.json
+- Documentacao tecnica: docs/technical_overview.md
 
 ## Onde ficam os arquivos
 - Codigo: `frontend/src/`

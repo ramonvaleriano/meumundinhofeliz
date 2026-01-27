@@ -23,6 +23,7 @@ Este frontend e uma SPA (Single Page Application) feita com React + Vite + TypeS
 ## Integração inicial com backend
 - O cadastro inicial carrega **Tipo de Perfil** da API.
 - O cadastro inicial cria endereco, busca feature flag e cria usuario.
+- O login chama `POST /api/auth/login` e navega para `/painel` em sucesso.
 - A URL da API vem do `.env`.
 
 Arquivos principais:
