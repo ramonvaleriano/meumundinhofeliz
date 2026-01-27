@@ -1,6 +1,44 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { env } from '@/shared/services/env'
 
 export function LoginPage() {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+
+  const handleLogin = async () => {
+    setError(null)
+    setLoading(true)
+    console.info('Login: iniciando autenticacao')
+
+    try {
+      const response = await fetch(`${env.apiBaseUrl}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      })
+
+      if (!response.ok) {
+        const detail = await response.text()
+        console.error('Login: erro ao autenticar', detail)
+        throw new Error(detail)
+      }
+
+      const data = await response.json()
+      console.info('Login: sucesso', data)
+      navigate('/painel')
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Erro inesperado'
+      console.error('Login: erro no fluxo', message)
+      setError(message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="page">
       <header className="hero">
@@ -36,16 +74,29 @@ export function LoginPage() {
           <form>
             <label>
               E-mail
-              <input type="email" placeholder="voce@email.com" />
+              <input
+                type="email"
+                placeholder="voce@email.com"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </label>
             <label>
               Senha
-              <input type="password" placeholder="********" />
+              <input
+                type="password"
+                placeholder="********"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
             </label>
-            <button type="button">Entrar</button>
+            <button type="button" onClick={handleLogin} disabled={loading}>
+              {loading ? 'Entrando...' : 'Entrar'}
+            </button>
             <a className="link" href="#">Esqueci minha senha</a>
             <Link className="button outline" to="/criar-conta">Criar conta</Link>
           </form>
+          {error ? <p className="error-banner">{error}</p> : null}
         </section>
       </main>
 
