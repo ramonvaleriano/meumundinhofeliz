@@ -24,6 +24,7 @@
 - Tabela FeatureFlag: docs/feature_flag.md
 - Tabela ProfileType: docs/profile_type.md
 - Tabela Users: docs/users.md
+- Tabela UserProfileType: docs/user_profile_type.md
 
 ## Estrutura atual
 - app/core: configuracao e conexao com banco

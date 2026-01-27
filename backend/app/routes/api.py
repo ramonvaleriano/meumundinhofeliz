@@ -8,6 +8,7 @@ from app.routes.feature_flag import router as feature_flag_router
 from app.routes.profile_type import router as profile_type_router
 from app.routes.user import router as user_router
 from app.routes.auth import router as auth_router
+from app.routes.user_profile_type import router as user_profile_type_router
 
 router = APIRouter()
 router.include_router(address_router)
@@ -15,6 +16,7 @@ router.include_router(feature_flag_router)
 router.include_router(profile_type_router)
 router.include_router(user_router)
 router.include_router(auth_router)
+router.include_router(user_profile_type_router)
 
 
 @router.get(
