@@ -1,0 +1,49 @@
+{
+  "base_url": "http://localhost:8000",
+  "health": [
+    {"method": "GET", "path": "/"},
+    {"method": "GET", "path": "/api/health"},
+    {"method": "GET", "path": "/api/db/health"}
+  ],
+  "auth": [
+    {"method": "POST", "path": "/api/auth/login"},
+    {"method": "POST", "path": "/api/auth/refresh"}
+  ],
+  "address": [
+    {"method": "POST", "path": "/api/addresses/"},
+    {"method": "GET", "path": "/api/addresses/"},
+    {"method": "GET", "path": "/api/addresses/{id}"},
+    {"method": "PUT", "path": "/api/addresses/{id}"},
+    {"method": "DELETE", "path": "/api/addresses/{id}"}
+  ],
+  "profile_type": [
+    {"method": "POST", "path": "/api/profile-types/"},
+    {"method": "GET", "path": "/api/profile-types/"},
+    {"method": "GET", "path": "/api/profile-types/all"},
+    {"method": "GET", "path": "/api/profile-types/{id}"},
+    {"method": "PUT", "path": "/api/profile-types/{id}"},
+    {"method": "DELETE", "path": "/api/profile-types/{id}"}
+  ],
+  "feature_flag": [
+    {"method": "POST", "path": "/api/feature-flags/"},
+    {"method": "GET", "path": "/api/feature-flags/"},
+    {"method": "GET", "path": "/api/feature-flags/{id}"},
+    {"method": "PUT", "path": "/api/feature-flags/{id}"},
+    {"method": "DELETE", "path": "/api/feature-flags/{id}"}
+  ],
+  "users": [
+    {"method": "POST", "path": "/api/users/"},
+    {"method": "GET", "path": "/api/users/"},
+    {"method": "GET", "path": "/api/users/{id}"},
+    {"method": "PUT", "path": "/api/users/{id}"},
+    {"method": "PATCH", "path": "/api/users/{id}"},
+    {"method": "DELETE", "path": "/api/users/{id}"}
+  ],
+  "user_profile_type": [
+    {"method": "POST", "path": "/api/user-profile-types/"},
+    {"method": "GET", "path": "/api/user-profile-types/"},
+    {"method": "GET", "path": "/api/user-profile-types/{id}"},
+    {"method": "PUT", "path": "/api/user-profile-types/{id}"},
+    {"method": "DELETE", "path": "/api/user-profile-types/{id}"}
+  ]
+}

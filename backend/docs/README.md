@@ -16,6 +16,10 @@
 - Services e Utils: docs/services_and_utils.md
 - Visao geral do banco: docs/database_overview.md
 - Troubleshooting: docs/troubleshooting.md
+- Glossario (leigo): docs/glossario.md
+- Guia rapido (leigo): docs/quickstart_leigo.md
+- Exemplos de requisicoes: docs/examples.md
+- Endpoints (JSON para IA): docs/endpoints.json
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
 - Servico de Criptografia: docs/crypto_service.md
