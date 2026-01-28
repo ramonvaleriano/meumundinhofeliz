@@ -1,5 +1,8 @@
 # Backend - Documentacao Inicial
 
+## Prompt para novos agentes
+- `AGENT_PROMPT.md` (na raiz do repositorio)
+
 ## Stack
 - Python
 - FastAPI
@@ -20,6 +23,9 @@
 - Guia rapido (leigo): docs/quickstart_leigo.md
 - Exemplos de requisicoes: docs/examples.md
 - Endpoints (JSON para IA): docs/endpoints.json
+- ERD (entidades): docs/erd.md
+- Regras de negocio: docs/business_rules.md
+- Checklist deploy: docs/deploy_checklist.md
 - Migrations: docs/migrations.md
 - Tabela Address: docs/address.md
 - Servico de Criptografia: docs/crypto_service.md
