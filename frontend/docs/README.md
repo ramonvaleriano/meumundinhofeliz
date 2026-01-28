@@ -2,6 +2,9 @@
 
 Este conjunto de documentos explica a estrutura, o funcionamento e as decisoes do frontend. Tudo foi escrito para quem nao tem experiencia com frontend.
 
+## Prompt para novos agentes
+- `AGENT_PROMPT.md` (na raiz do repositorio)
+
 ## Sumario
 - Visao geral: docs/overview.md
 - Arquitetura (DDD): docs/architecture.md
